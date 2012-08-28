@@ -1,11 +1,16 @@
 class HomeController < ApplicationController
 
-  before_filter :set_ouath
+  before_filter :set_oauth
 
   def index
     if @authorized
-      @profiles = Garb::Management::Profile.all(@garbsession)
-      gen_report if params[:profile].present?
+      begin
+        @profiles = Garb::Management::Profile.all(@garbsession)
+        gen_report if params[:profile].present?
+      rescue Garb::DataRequest::ClientError => e
+        @message = e.message
+        render 'error'
+      end
     end
   end
 
@@ -24,7 +29,7 @@ class HomeController < ApplicationController
                                          limit: 50)
   end
 
-  def set_ouath
+  def set_oauth
     if session[:google_token] and session[:google_secret]
       consumer = OAuth::Consumer.new(GOOGLE_KEY, GOOGLE_SECRET, {
         :site => 'https://www.google.com',
