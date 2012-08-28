@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:eicca/omniauth-google.git
+  revision: 2c0516fb77a33db5e36dccffc0a47d1ead3a9e2f
+  specs:
+    omniauth-google (1.0.1)
+      multi_json
+      omniauth (~> 1.0.0)
+      omniauth-oauth
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -101,10 +110,6 @@ GEM
     omniauth (1.0.3)
       hashie (~> 1.2)
       rack
-    omniauth-google (1.0.1)
-      multi_json
-      omniauth (~> 1.0.0)
-      omniauth-oauth
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -205,7 +210,7 @@ DEPENDENCIES
   hpricot (>= 0.8.6)
   jquery-rails
   jquery-rails-aristo
-  omniauth-google
+  omniauth-google!
   pg
   rails (= 3.2.2)
   rspec-rails (>= 2.11.0)
