@@ -17,7 +17,9 @@ class HomeController < ApplicationController
   private
 
   def gen_report
-    @profile = Garb::Management::Profile.all(@garbsession).first
+    @profile = Garb::Management::Profile.all(@garbsession).detect {
+      |profile| profile.web_property_id == params[:profile] }
+
     start_date = Date.today - 15
     if params[:start_date].present?
       d = params[:start_date]
