@@ -107,6 +107,7 @@ GEM
       oauth
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
+    pg (0.14.0)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -202,6 +203,7 @@ DEPENDENCIES
   hpricot (>= 0.8.6)
   jquery-rails
   omniauth-google
+  pg
   rails (= 3.2.2)
   rspec-rails (>= 2.11.0)
   ruby_parser (>= 2.3.1)
