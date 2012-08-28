@@ -20,6 +20,6 @@ gem "bootstrap-sass", ">= 2.0.4.0"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "simple_form", ">= 2.0.2"
-gem 'omniauth-google', git: 'git@github.com:eicca/omniauth-google.git'
+gem 'omniauth-google', git: 'git://github.com/eicca/omniauth-google.git'
 gem 'garb'
 gem "jquery-rails-aristo"

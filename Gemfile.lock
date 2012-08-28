@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:eicca/omniauth-google.git
+  remote: git://github.com/eicca/omniauth-google.git
   revision: 2c0516fb77a33db5e36dccffc0a47d1ead3a9e2f
   specs:
     omniauth-google (1.0.1)
