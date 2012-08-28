@@ -2,5 +2,6 @@
   = label :select_profile, 'Select profile'
   = select_tag :profile, options_from_collection_for_select(@profiles, :web_property_id, :title, params[:profile])
   = label :start_date, 'From:'
-  = select_date(date = @start_date, options = {}, html_options = {})
+  = text_field_tag :date, params[:date] || (Time.now - 15.days).to_date.to_s, class: 'date'
+  %br/
   = submit_tag "Get report", class: 'btn btn-primary'

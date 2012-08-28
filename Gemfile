@@ -22,3 +22,4 @@ gem "cancan", ">= 1.6.8"
 gem "simple_form", ">= 2.0.2"
 gem 'omniauth-google'
 gem 'garb'
+gem "jquery-rails-aristo"
