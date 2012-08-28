@@ -1,8 +1,8 @@
 GaTest::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  GOOGLE_KEY = ENV[:google_key]
-  GOOGLE_SECRET = ENV[:google_secret]
+  GOOGLE_KEY = ENV['google_key']
+  GOOGLE_SECRET = ENV['google_secret']
   # Code is not reloaded between requests
   config.cache_classes = true
 
