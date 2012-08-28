@@ -1,0 +1,6 @@
+= form_tag '/' do
+  = label :select_profile, 'Select profile'
+  = select_tag :profile, options_from_collection_for_select(@profiles, :web_property_id, :title)
+  = label :start_date, 'From:'
+  = date_select :start_date, params[:date_select]
+  = submit_tag "Get report", class: 'btn btn-primary'

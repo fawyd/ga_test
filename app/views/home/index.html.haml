@@ -1,2 +1,10 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+- if @authorized
+  = render 'form'
+  - if @profile
+    %p Using profile: #{@profile.title}
+    = render 'report'
+- elsif user_signed_in?
+  %p 
+    = link_to 'link your account', '/auth/google'
+- else
+  %p Please, sign in or sign up!

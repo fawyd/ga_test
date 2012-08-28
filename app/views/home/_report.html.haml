@@ -1,0 +1,13 @@
+%table.table.table-striped.table-bordered
+  %thead
+    %th(width='400px') Keyword
+    %th(width='100px') Pageviews
+    - if current_user.can_view_visits
+      %th(width='100px') Visits
+  %tbody
+    - @report.each do |data|
+      %tr
+        %td= data.keyword
+        %td= data.pageviews
+        - if current_user.can_view_visits
+          %td= data.visits

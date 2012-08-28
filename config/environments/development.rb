@@ -1,5 +1,8 @@
 GaTest::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  cred = YAML.load_file("#{Rails.root}/config/credentials.yml")
+  GOOGLE_KEY = cred["google_key"]
+  GOOGLE_SECRET = cred["google_secret"]
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
