@@ -2,5 +2,5 @@
   = label :select_profile, 'Select profile'
   = select_tag :profile, options_from_collection_for_select(@profiles, :web_property_id, :title, params[:profile])
   = label :start_date, 'From:'
-  = date_select :start_date, params[:date_select]
+  = select_date(date = @start_date, options = {}, html_options = {})
   = submit_tag "Get report", class: 'btn btn-primary'

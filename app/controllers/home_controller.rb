@@ -6,6 +6,12 @@ class HomeController < ApplicationController
     if @authorized
       begin
         @profiles = Garb::Management::Profile.all(@garbsession)
+        @start_date = Date.today - 15
+        if params[:date].present?
+          d = params[:date]
+          @start_date = Date.new(d['year'].to_i, d['month'].to_i, d['day'].to_i)
+        end
+
         gen_report if params[:profile].present?
       rescue Garb::DataRequest::ClientError => e
         @message = e.message
@@ -20,15 +26,10 @@ class HomeController < ApplicationController
     @profile = Garb::Management::Profile.all(@garbsession).detect {
       |profile| profile.web_property_id == params[:profile] }
 
-    start_date = Date.today - 15
-    if params[:start_date].present?
-      d = params[:start_date]
-      start_date = Date.new(d['(1i)'].to_i, d['(2i)'].to_i, d['(3i)'].to_i)
-    end
-    @report = Reports::PageViews.results(@profile,
-                                         start_date: start_date,
-                                         end_date: Date.today,
-                                         limit: 50)
+      @report = Reports::PageViews.results(@profile,
+                                           start_date: @start_date,
+                                           end_date: Date.today,
+                                           limit: 50)
   end
 
   def set_oauth
